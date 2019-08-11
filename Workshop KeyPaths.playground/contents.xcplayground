@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios'>
+    <pages>
+        <page name='0 - Intro'/>
+        <page name='1 - Standard Library'/>
+        <page name='2 - Standard Library continued'/>
+        <page name='3 - Type-Safe Predicates'/>
+        <page name='4 - Type-Safe Predicates continued'/>
+        <page name='5 - Performs property-wise checks'/>
+    </pages>
+</playground>
