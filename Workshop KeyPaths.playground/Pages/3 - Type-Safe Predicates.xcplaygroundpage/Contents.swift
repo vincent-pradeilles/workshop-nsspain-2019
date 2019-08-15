@@ -75,4 +75,41 @@ func < <Element, Value: Comparable>(_ keyPath: KeyPath<Element, Value>, _ consta
 
 people.filter(where: \.age > 18 && \.age < 80)
 
+// Finally, let's try to implement some pattern matching
+
+// Say that we want to be able to write the following code:
+
+//switch person {
+//case \.age == 45:
+//    print("I'm old!")
+//    fallthrough
+//case \.age < 18:
+//    print("I'm not an adult...")
+//    fallthrough
+//default:
+//    break
+//}
+
+// To implement custom switching Swift, we must provide
+// an override of the pattern matching operator (~=)
+
+func ~= <Element>(_ lhs: Predicate<Element>, rhs: Element) -> Bool {
+    return lhs.evaluate(with: rhs)
+}
+
+// And this is it, we are now ready to do pattern matching with predicates!
+
+let kid = Person(age: 12)
+
+switch kid {
+case \.age > 70:
+    print("I'm old!")
+    fallthrough
+case \.age < 18:
+    print("I'm not an adult...")
+    fallthrough
+default:
+    break
+}
+
 //: [Next](@next)
