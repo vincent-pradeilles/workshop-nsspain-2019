@@ -11,14 +11,16 @@ import Foundation
 
 extension Sequence {
     func filter(_ keyPath: KeyPath<Element, Bool>) -> [Element] {
-        return self.filter { $0[keyPath: keyPath] }
+        // 👩🏽‍💻👨🏼‍💻 Implement `func filter()`
     }
 }
 
 let data = [1, 2, 3, 4, 5, 6, 7 ,8, 9]
 
 extension Int {
-    var isEven: Bool { return (self % 2) == 0 }
+    var isEven: Bool {
+        // 👩🏽‍💻👨🏼‍💻 Implement `var isEven: Bool`
+    }
 }
 
 data.filter(\.isEven)
@@ -27,7 +29,7 @@ data.filter(\.isEven)
 
 extension Sequence {
     func map<T>(_ keyPath: KeyPath<Element, T>) -> [T] {
-        return self.map { $0[keyPath: keyPath] }
+        // 👩🏽‍💻👨🏼‍💻 Implement `map()`
     }
 }
 
@@ -44,9 +46,7 @@ let getterWithClosure = { (string: String) in string.count }
 // How about we try to turn a KeyPath into a getter function?
 
 func get<Root, Value>(_ keyPath: KeyPath<Root, Value>) -> (Root) -> Value {
-    return { (root: Root) -> Value in
-        return root[keyPath: keyPath]
-    }
+    // 👩🏽‍💻👨🏼‍💻 Implement `get()`
 }
 
 data.map(get(\.description))
@@ -56,7 +56,7 @@ data.map(get(\.description))
 prefix operator ^
 
 prefix func ^<Root, Value>(_ keyPath: KeyPath<Root, Value>) -> (Root) -> Value {
-    return get(keyPath)
+    // 👩🏽‍💻👨🏼‍💻 Implement `prefix operator ^`
 }
 
 data.map(^\.description)
