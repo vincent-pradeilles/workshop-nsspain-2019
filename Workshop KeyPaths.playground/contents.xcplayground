@@ -7,5 +7,7 @@
         <page name='3 - Type-Safe Predicates'/>
         <page name='4 - Type-Safe Predicates continued'/>
         <page name='5 - Performs property-wise checks'/>
+        <page name='6 - Data Binding'/>
+        <page name='7 - Data Binding continued'/>
     </pages>
 </playground>
