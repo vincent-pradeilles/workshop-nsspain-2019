@@ -7,7 +7,7 @@ import PlaygroundSupport
 // Now, we are going to implement this
 // binding pattern using KeyPaths!
 
-class Binding<Destination: AnyObject>: NSObject, UITextFieldDelegate {
+class Binding<Destination: AnyObject>: NSObject {
     weak var source: UITextField?
     weak var destination: Destination?
     var property: WritableKeyPath<Destination, String?>
